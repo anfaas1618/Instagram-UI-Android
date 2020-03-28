@@ -15,6 +15,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.uk.instagramui.Fragments.HomeFragment;
 import com.uk.instagramui.Fragments.NotificationsFragment;
 import com.uk.instagramui.Fragments.ProfileFragment;
@@ -37,7 +39,9 @@ public class MainActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
+		FirebaseDatabase database =FirebaseDatabase.getInstance();
+		DatabaseReference reference=database.getReference();
+		reference.setValue("anfaas");
 		initialize();
 	}
 
