@@ -1,16 +1,20 @@
 package com.uk.instagramui.Activities;
 
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.uk.instagramui.Fragments.HomeFragment;
 import com.uk.instagramui.Fragments.NotificationsFragment;
 import com.uk.instagramui.Fragments.ProfileFragment;
@@ -27,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
 		"https://pbs.twimg.com/profile_images/798351849984294912/okhePpJW.jpg",
 		"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhuaOnKGXWUAV7UMA9UhUQB66kaIne0HYKUDOgfzr8dCO2tchv"
 	};
-	
-	
+
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -36,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
 		
 		initialize();
 	}
-	
-	
+
+
 	private void initialize() {
 		Toolbar toolbar = findViewById(R.id.toolbar);
 		setSupportActionBar(toolbar);
@@ -45,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 		BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNav);
 		
 		loadFragment(new HomeFragment());               //Default is home fragment
-		
+
 		bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
 			@Override
 			public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -65,8 +69,8 @@ public class MainActivity extends AppCompatActivity {
 			}
 		});
 	}
-	
-	
+
+
 	private boolean loadFragment(Fragment fragment){
 		
 		if (fragment != null) {
